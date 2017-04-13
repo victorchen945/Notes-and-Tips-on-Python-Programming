@@ -1,0 +1,54 @@
+"""
+we know that there 's way to realize struct array in C++ like this:
+
+struct project
+{   char architect[30];
+    char civilengineer[30];
+    char electricengineer[30];
+    int days;
+    double cost;
+    char tel[30];
+} projects[100]
+
+while in python we don't have system function like struct
+but we can realize the struct array by writing a class:
+
+"""
+
+class project:
+    def __init__(self):
+        self.architect=""
+        self.civilengineer=""
+        self.electircengineer=""
+        self.days=0
+        self.cost=0.00
+        self.tel=""
+
+#then we construct list:
+
+project=project()
+projects=[]
+for i in range(100):
+    projects.append(project)
+
+"""but there is the risk, the risk is that every time i call the project it will initialize because we have __init__
+thus it may comes like that:
+
+>>>num=2
+>>>for j in range(5):
+>>>     num+=2
+>>>     project[j].days=num
+>>>for k in range(5):
+>>>     print project[k].days
+0 0 0 0 0
+
+#while we expected to get -> 4 6 8 10 12
+#that is because everytime we visit project, it will init and set project.days value to 0
+
+
+        
+
+
+
+
+
