@@ -1,0 +1,21 @@
+###when i need to write class in python, follow the form like this:
+
+class unit:
+    def func1(self,val1,val2):
+        ...
+        return a
+    def func2(self,...):
+        ...
+        return b
+    def func3(self,...) :
+        ...
+        return c
+
+###if i need to call function of this class(func1 for example) outside the class, i shall do this:
+
+unit=unit()
+unit.func1(val1,val2)
+
+###if i need to call function of this class inside the class, i shall do this:
+
+self.func1(val1,val2)
